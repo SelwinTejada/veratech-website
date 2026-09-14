@@ -3,21 +3,12 @@
 
 @section('content')
 
-<section class="relative overflow-hidden animated-gradient py-20">
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-10 left-20 w-72 h-72 bg-brand rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-10 w-96 h-96 bg-sky rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
-        <span class="inline-block text-xs font-bold tracking-widest uppercase text-brand bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-2">
-            Trusted I.T. Partner
-        </span>
-        <h1 class="mt-6 text-4xl lg:text-5xl font-black text-white tracking-tight">About Veratech</h1>
-        <p class="mt-4 text-lg text-slate-200 max-w-3xl mx-auto">
-            Veratech Inc. is a full-service enterprise technology integrator, delivering reliable, secure and future-ready I.T. to every client we serve.
-        </p>
-    </div>
-</section>
+@include('partials.page-hero', [
+    'title'    => 'About Veratech',
+    'subtitle' => 'A full-service enterprise technology integrator, delivering reliable, secure and future-ready I.T. to every client we serve.',
+    'badge'    => 'Trusted I.T. Partner',
+    'image'    => 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1920&q=80',
+])
 
 <section class="py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2">

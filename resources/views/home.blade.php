@@ -3,95 +3,72 @@
 
 @section('content')
 
-{{-- ═══ HERO ═══ --}}
-<section class="relative overflow-hidden animated-gradient">
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-brand rounded-full blur-3xl"></div>
-        <div class="absolute bottom-10 right-20 w-96 h-96 bg-sky rounded-full blur-3xl"></div>
-    </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid gap-12 lg:grid-cols-2 items-center">
-        <div class="fade-up">
-            <span class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-2">
-                <span class="h-2 w-2 rounded-full bg-brand animate-pulse"></span>
-                Trusted I.T. Partner in the Philippines
-            </span>
-
-            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight">
-                {{ $info['tagline'] ?? 'Make Every Space a Meeting Place' }}
-            </h1>
-
-            <p class="mt-6 text-lg text-slate-200 leading-relaxed max-w-xl">
-                {{ $info['line_of_business'] ?? 'Corporate and commercial reselling, wholesaling, and direct selling of hardware, software, and I.T. solutions that fit your needs.' }}
-            </p>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-                <a href="{{ route('quote') }}"
-                   class="btn-shine inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-gradient-to-r from-brand to-brand-dark text-white font-bold shadow-2xl shadow-brand/30">
-                    Request a Quote
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </a>
-                <a href="{{ route('brands') }}"
-                   class="inline-flex items-center gap-2 px-7 py-4 rounded-xl border-2 border-white/30 text-white font-bold hover:bg-white/10 backdrop-blur transition">
-                    View Our Brands
-                </a>
-            </div>
-
-            {{-- Stats --}}
-            <div class="mt-12 grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
-                <div>
-                    <div class="text-3xl font-black text-brand">100+</div>
-                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Global Brands</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-brand">15+</div>
-                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Years Experience</div>
-                </div>
-                <div>
-                    <div class="text-3xl font-black text-brand">24/7</div>
-                    <div class="text-xs uppercase tracking-wider text-slate-300 mt-1">Support</div>
-                </div>
-            </div>
-        </div>
-
-        {{-- Hero visual --}}
-        <div class="relative fade-up fade-up-delay-1">
-            <div class="aspect-square rounded-3xl bg-gradient-to-br from-sky/30 via-brand/20 to-navy/60 backdrop-blur-xl border border-white/20 shadow-2xl grid place-items-center p-8">
-                <div class="text-center">
-                    <div class="inline-flex h-24 w-24 rounded-2xl bg-gradient-to-br from-brand to-brand-dark items-center justify-center mb-6 shadow-2xl shadow-brand/40">
-                        <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <div class="text-white font-bold text-xl">Enterprise Grade</div>
-                    <div class="text-slate-200 text-sm mt-2">Hardware · Software · Solutions</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Wave divider --}}
-    <div class="relative -mb-px">
-        <svg viewBox="0 0 1440 100" class="w-full h-auto text-slate-50" preserveAspectRatio="none"><path fill="currentColor" d="M0,50 C300,100 600,0 900,50 C1200,100 1440,50 1440,50 L1440,100 L0,100 Z"/></svg>
-    </div>
-</section>
+{{-- ═══ HERO CAROUSEL ═══ --}}
+@include('partials.carousel', ['info' => $info, 'solutions' => $solutions])
 
 {{-- ═══ WHO WE ARE ═══ --}}
-<section class="py-24">
+{{-- ═══ WHO WE ARE ═══ --}}
+<section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-16 lg:grid-cols-2 items-center">
 
+        {{-- LEFT: Real photo of office with logo overlay --}}
         <div class="relative">
-            <div class="aspect-square rounded-3xl bg-gradient-to-br from-sky-100 via-white to-brand/10 border border-slate-200 shadow-xl grid place-items-center p-10 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-40 h-40 bg-brand/20 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-40 h-40 bg-sky/20 rounded-full blur-3xl"></div>
-                <svg class="w-40 h-40 text-navy relative" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl relative">
+                <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                    alt="Veratech office"
+                    class="absolute inset-0 h-full w-full object-cover">
+
+                {{-- Dark tint so the logo pops --}}
+                <div class="absolute inset-0 bg-gradient-to-br from-navy/60 via-navy/40 to-transparent"></div>
+
+                {{-- Logo card floating on the photo --}}
+                <div class="absolute inset-x-8 bottom-8 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl px-8 py-6 text-center border border-white/50">
+                    <img
+                        src="{{ asset('images/veratech-logo.jpg') }}"
+                        alt="Veratech Inc."
+                        class="mx-auto h-16 w-auto object-contain"
+                    >
+                    <div class="mt-3 text-[10px] uppercase tracking-[0.35em] text-slate-500 font-bold">
+                        I.T. Solutions Provider · Philippines
+                    </div>
+                </div>
+
+                {{-- Accent dot --}}
+                <div class="absolute top-6 right-6 h-3 w-3 rounded-full bg-brand animate-pulse"></div>
+            </div>
+
+            {{-- Small offset accent card --}}
+            <div class="hidden lg:block absolute -bottom-6 -right-6 bg-navy text-white rounded-2xl px-6 py-4 shadow-2xl">
+                <div class="text-2xl font-black">15+</div>
+                <div class="text-[10px] uppercase tracking-widest text-slate-300 font-bold">Years Serving</div>
             </div>
         </div>
 
+        {{-- RIGHT: Text --}}
         <div>
             <span class="inline-block text-xs font-bold tracking-widest uppercase text-brand">About Us</span>
             <h2 class="mt-4 text-4xl font-black text-navy tracking-tight">WHO WE ARE</h2>
             <div class="mt-6 text-slate-600 leading-relaxed space-y-4">
-                <p>{{ $info['commitment'] ?? 'Veratech Inc. is a company founded by entrepreneurs who are well-experienced in the retail and corporate I.T. industry. We have partnered with the top I.T. brands and suppliers in the Philippines to ensure that we offer the best to our clients.' }}</p>
+                <p>{{ $info['commitment'] ?? 'Veratech Inc. is a company founded by entrepreneurs who are well-experienced in the retail and corporate I.T. industry.' }}</p>
             </div>
+
+            <div class="mt-8 grid grid-cols-3 gap-4">
+                <div class="text-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5">
+                    <div class="text-2xl font-black text-navy">100+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Brands</div>
+                </div>
+                <div class="text-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5">
+                    <div class="text-2xl font-black text-navy">500+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Clients</div>
+                </div>
+                <div class="text-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5">
+                    <div class="text-2xl font-black text-navy">24/7</div>
+                    <div class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Support</div>
+                </div>
+            </div>
+
             <a href="{{ route('about') }}" class="mt-8 inline-flex items-center gap-2 text-brand font-bold hover:gap-3 transition-all">
                 Learn more about us
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -204,15 +181,24 @@
     </div>
 </section>
 
-{{-- ═══ CTA ═══ --}}
+{{-- ═══ CTA with photo background ═══ --}}
 <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative rounded-3xl overflow-hidden animated-gradient p-12 lg:p-16 text-center">
-            <div class="absolute top-0 left-0 w-64 h-64 bg-brand/20 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-64 h-64 bg-sky/20 rounded-full blur-3xl"></div>
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+            {{-- Photo --}}
+            <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1920&q=80"
+                alt=""
+                class="absolute inset-0 h-full w-full object-cover">
 
-            <div class="relative">
-                <h2 class="text-3xl lg:text-4xl font-black text-white tracking-tight">Ready to modernize your infrastructure?</h2>
+            {{-- Navy overlay --}}
+            <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/60"></div>
+
+            {{-- Content --}}
+            <div class="relative p-12 lg:p-16 text-center">
+                <h2 class="text-3xl lg:text-4xl font-black text-white tracking-tight">
+                    Ready to modernize your infrastructure?
+                </h2>
                 <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">
                     Talk to a Veratech specialist today. We'll help you design the right solution for your business.
                 </p>

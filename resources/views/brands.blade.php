@@ -4,7 +4,7 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="relative overflow-hidden animated-gradient py-20">
+
     <div class="absolute inset-0 opacity-20">
         <div class="absolute top-10 left-20 w-72 h-72 bg-brand rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 right-10 w-96 h-96 bg-sky rounded-full blur-3xl"></div>
@@ -30,7 +30,12 @@
                         {{ $category }}
                         <span class="block h-1 w-16 bg-brand rounded-full mx-auto mt-3"></span>
                     </h2>
-                </div>
+            @include('partials.page-hero', [
+    'title'    => 'Our Brands',
+    'subtitle' => 'We represent the top I.T. brands and suppliers in the Philippines across every category.',
+    'badge'    => 'Authorized Reseller & Integrator',
+    'image'    => 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80',
+])    </div>
 
                 <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     @foreach ($items as $brand)

@@ -6,21 +6,12 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="relative overflow-hidden animated-gradient py-20">
-    <div class="absolute inset-0 opacity-20">
-        <div class="absolute top-10 left-20 w-72 h-72 bg-brand rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 right-10 w-96 h-96 bg-sky rounded-full blur-3xl"></div>
-    </div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
-        <span class="inline-block text-xs font-bold tracking-widest uppercase text-brand bg-white/10 backdrop-blur border border-white/20 rounded-full px-4 py-2">
-            We'd Love to Hear From You
-        </span>
-        <h1 class="mt-6 text-4xl lg:text-5xl font-black text-white tracking-tight">Contact Us</h1>
-        <p class="mt-4 text-lg text-slate-200 max-w-2xl mx-auto">
-            Have a question or need support? Send us a message and our team will get back to you.
-        </p>
-    </div>
-</section>
+@include('partials.page-hero', [
+    'title'    => 'Contact Us',
+    'subtitle' => 'Have a question or need support? Our team responds within one business day.',
+    'badge'    => 'We\'d Love to Hear From You',
+    'image'    => 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1920&q=80',
+])
 
 <section class="py-20 -mt-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-8 lg:grid-cols-5">
