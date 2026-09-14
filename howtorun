@@ -1,0 +1,25 @@
+$env:Path = "C:\xampp2\php;" + $env:Path
+
+how to run
+php artisan serve 
+
+
+pag may binago sa design "php artisan view:clear"
+
+clear cache "php artisan optimize:clear"
+
+
+
+USED LARAVEL HERE. TO BE ABLE TO USE LARAVEL YOU NEED TO HAVE THE VERSION OF PHP 8.2.0.something
+
+FOR TUNNELING
+C:\xampp\htdocs\cloudflared.exe tunnel --url http://localhost:8000
+
+
+
+TO PUSH TO GITHUB REPOSITORY
+git add .
+
+git commit -m "Update website source code"
+
+git push origin main
