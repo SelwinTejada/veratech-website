@@ -1,6 +1,10 @@
 $env:Path = "C:\xampp2\php;" + $env:Path
 
 how to run
+copy .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan storage:link
 php artisan serve 
 
 
